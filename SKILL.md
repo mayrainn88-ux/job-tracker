@@ -1,7 +1,6 @@
 ---
 name: job-hunter
-description: Chinese job search assistant for Hangzhou. Analyzes Chinese job listings, matches them against the user's resume, scores job fit, generates BOSS直聘 communication messages, and tracks applications.
-  Triggers: /job-hunt, "find jobs", "job search", "hunt for jobs"
+description:Chinese job search assistant for Hangzhou. Analyzes Chinese job listings, matches them against the user's resume, scores job fit, generates BOSS直聘 communication messages, and tracks applications.
 ---
 
 # Job Hunter Skill
