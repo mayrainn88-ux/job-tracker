@@ -1,10 +1,6 @@
 ---
 name: job-hunter
-description: |
-  Automated job hunting skill that searches jobs via JobSpy (LinkedIn guest API, free)
-  and JSearch (RapidAPI/Google Jobs, 200 req/month free), matches them to your resume
-  using scoring, generates personalized cover letters, and saves results to Obsidian.
-
+description: Chinese job search assistant for Hangzhou. Analyzes Chinese job listings, matches them against the user's resume, scores job fit, generates BOSS直聘 communication messages, and tracks applications.
   Triggers: /job-hunt, "find jobs", "job search", "hunt for jobs"
 ---
 
@@ -113,10 +109,62 @@ Each job gains `final_score` (AI score when present, keyword score otherwise) an
 Writes `Job Tracker - YYYY-MM-DD.md` with all jobs scoring **> 70**, sorted by score descending. Idempotent — skips if today's file already exists.
 
 ```markdown
-| # | Score | Title | Company | Salary | Remote | Source | Link |
-|---|-------|-------|---------|--------|--------|--------|------|
-| 1 | 100   | Data Engineer II | Dana-Farber Cancer Institute | - | Yes | Indeed | [Apply](url) |
-| 2 | 100   | Senior Health Data Informaticist | Veeva Systems | - | Yes | Linkedin | [Apply](url) |
+# 杭州国内求职助手
+
+这是一个专门面向中国国内招聘市场的 AI 求职助手。
+
+主要服务于杭州地区的求职者，帮助用户收集招聘信息、分析岗位要求、匹配个人简历、评估岗位价值，并生成求职沟通话术。
+
+## 求职目标
+
+- 工作城市：杭州
+- 目标薪资：税前 12K-18K
+- 工作经验：3-5年及以上
+- 目标行业：快消品、消费品、电商、互联网、品牌营销
+
+## 目标岗位
+
+- 小红书运营
+- 小红书PR
+- 达人营销
+- 品牌营销
+- 内容营销
+- 新媒体运营
+
+## 用户核心优势
+
+- 4年小红书PR经验
+- 2年抖音商务及内容经验
+- 快消品品牌从0到1经验
+- 达人投放ROI达到8-9
+- 百万阅读内容爆文经验
+- 独立负责品牌推广及内容运营
+
+## 核心工作流程
+
+1. 接收用户提供的国内招聘岗位信息。
+2. 提取公司、岗位、薪资、地点和任职要求。
+3. 分析岗位与用户简历的匹配程度。
+4. 输出0-100分的匹配评分及具体原因。
+5. 判断薪资、工作内容和发展空间是否符合求职目标。
+6. 生成针对岗位的BOSS直聘沟通话术。
+7. 记录投递进度和面试结果。
+
+## 招聘数据来源
+
+优先使用用户提供的BOSS直聘、猎聘等招聘岗位链接或导出的岗位数据。
+
+不得将LinkedIn、Indeed的海外岗位结果冒充国内招聘结果。
+
+如果无法获取岗位完整信息，应明确提示用户补充，不得编造公司、薪资或招聘要求。
+
+## 岗位分析原则
+
+- 优先考虑与小红书、品牌营销、达人投放相关的岗位。
+- 重视实际工作职责，不仅根据岗位名称判断。
+- 区分必须具备的技能和加分项。
+- 对不符合薪资、工作内容要求的岗位说明原因。
+- 不自动投递简历，所有投递行为由用户确认。
 ```
 
 ### 6. Wait for User Selection — STOP HERE
@@ -150,8 +198,8 @@ Config file: `~/.config/job-hunter/config.json`
   "user_name": "Your Name",
   "min_score": 70,
   "search": {
-    "keywords": ["data analyst", "healthcare data analyst", "research analyst"],
-    "location": "Boston, MA",
+    "keywords": ["小红书运营","小红书PR","达人营销","品牌营销","内容营销","新媒体运营"],
+    "location": "杭州",
     "remote": true,
     "time_range": "week",
     "max_results_per_query": 20,
