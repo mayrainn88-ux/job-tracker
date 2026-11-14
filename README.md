@@ -1,9 +1,7 @@
 ---
 name: job-hunter
 description: |
-  Automated job hunting skill that searches jobs via JobSpy (LinkedIn guest API, free)
-  and JSearch (RapidAPI/Google Jobs, 200 req/month free), matches them to your resume
-  using scoring, generates personalized cover letters, and saves results to Obsidian.
+  杭州国内求职助手——支持岗位信息导入、简历匹配、岗位评分、求职话术生成及投递管理。
 
   Triggers: /job-hunt, "find jobs", "job search", "hunt for jobs"
 ---
